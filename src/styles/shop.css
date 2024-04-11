@@ -1,0 +1,150 @@
+.shop-navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 20px; 
+	background-color: transparent;
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+	top: 10px; 
+}
+
+.shop-navbar-left {
+	display: flex;
+	align-items: center;
+}
+
+.shop-navbar-left .shop-logo {
+	position: relative;
+	flex: none;	
+	margin-right: 15px;
+	width: 55px;
+	height: 35px;
+	object-fit: cover;
+	overflow: hidden;
+	color: black;
+}
+
+.shop-navbar-left .shop-navbar-title {
+	position: relative;
+	flex: none;
+	top: -5px;
+	margin-right: 5px;
+	width: 145px;
+	height: 41px;
+	color: rgb(0, 0, 0);
+	font-family: Prociono;
+	font-size: 40px;
+	font-weight: 400;
+	line-height: 48.80000305175781px;
+}
+
+.shop-navbar-right {
+	display: flex;
+	align-items: center;
+}
+
+.shop-navbar-right .shop-navbar-icon1 {
+	position: relative;
+	flex: none;
+	left: -100px;
+	width: 30px;
+	height: 23px;
+}
+
+.shop-section {
+    position: relative;
+    top: 100px;
+    width: 100%;
+    height: 130px;
+    background-image: url('../public/SignUp_Rectangle1.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .shop-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(172, 172, 172, 0.207);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    color: white;
+  }
+  
+  .shop-content {
+    z-index: 1;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-top: 180px;
+  }
+  
+  .shop-form {
+    max-width: 1200px;
+    margin: -2 0px auto;
+    border: 2px solid #6d5600;
+    padding: 120px 180px;
+  }
+
+  .shop-section .shop-text,
+  .Home,
+  .shop2,
+  .Vector,
+  .logo1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(0, 0, 0, 1);
+  }
+  
+  .shop-section .shop-text {
+    top: 40%;
+    font-family: Poppins;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 24px;
+  }
+
+  .logo1 {
+    position: relative;
+    top: -27%;
+    left: 15px;
+    width: 30px;
+    height: 20px;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .Home,
+  .shop2 {
+    top: 68%;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 24px;
+  }
+  
+  .shop2 {
+    left: 52%;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .Home {
+    left: 48%;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .Vector {
+    top: 75%;
+    width: 8px;
+    height: 8px;
+  }
+  
