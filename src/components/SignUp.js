@@ -60,14 +60,46 @@ const SignupForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
+    // Password conditions
+    const passwordLength = password.length >= 8;
+    const containsNumber = /\d/.test(password);
+    const containsAlphanumeric = /[a-zA-Z]/.test(password);
+    const containsCapitalLetter = /[A-Z]/.test(password);
+  
+    if (!passwordLength) {
+      window.alert('Password must be at least 8 characters long');
+      return;
+    }
+  
+    if (!containsNumber) {
+      window.alert('Password must contain at least one number');
+      return;
+    }
+  
+    if (!containsAlphanumeric) {
+      window.alert('Password must contain at least one alphanumeric character');
+      return;
+    }
+  
+    if (!containsCapitalLetter) {
+      window.alert('Password must contain at least one capital letter');
+      return;
+    }
+  
     try {
       const response = await axios.post('http://localhost:3001/signup', { username, email, password });
-      console.log(response.data); 
-      navigate('/login')
+      console.log(response.data);
+      if (response.data === 'User already exists') {
+        window.alert('User with this email already exists. Please login.');
+      } else {
+        navigate('/login');
+      }
     } catch (error) {
       console.error('Error signing up:', error);
     }
   };
+
 
   return (
     <div className="signup-content">

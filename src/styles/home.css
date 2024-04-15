@@ -287,7 +287,7 @@
 	line-height: 24px;
 	color: rgb(206, 0, 0);
 }
-.navbar {
+.navbar12 {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -299,12 +299,12 @@
 	top: 10px; /* Lowered the navbar */
   }
   
-  .navbar-left {
+  .navbar12-left {
 	display: flex;
 	align-items: center;
   }
 
-  .navbar-left .logo{
+  .navbar12-left .logo{
 	position: relative;
 	flex: none;	
 	margin-right: 15px;
@@ -314,7 +314,7 @@
 	overflow: hidden;
   }
   
-  .navbar-left .navbar-title {
+  .navbar12-left .navbar12-title {
 	position: relative;
 	flex: none;
 	top: -5px;
@@ -328,17 +328,17 @@
 	line-height: 48.80000305175781px;
   }
   
-  .navbar-center {
+  .navbar12-center {
 	flex-grow: 1;
 	text-align: center;
   }
   
-  .navbar-right {
+  .navbar12-right {
 	display: flex;
 	align-items: center;
   }
   
-  .navbar-right .navbar-icon1 {
+  .navbar12-right .navbar12-icon1 {
 	position: relative;
 	flex: none;
 	left: -100px;
@@ -346,7 +346,7 @@
 	height: 23px;
   }
 
-  .navbar-right .navbar-icon2 {
+  .navbar12-right .navbar12-icon2 {
 	position: relative;
 	left: -50px;
 	flex: none;
@@ -354,7 +354,7 @@
 	height: 23px;
   }
   
-  .navbar-center .navbar-link {
+  .navbar12-center .navbar12-link {
 	position: relative;
 	flex: none;
 	margin-right: 100px;

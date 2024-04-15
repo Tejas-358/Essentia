@@ -10,9 +10,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 20px;
-    background-color: transparent;
-    position: fixed;
+    padding: 20px 20px; 
+    background-color: #F5EEDA;
+    position: absolute;
     width: 100%;
     z-index: 999;
     top: 10px;
@@ -72,15 +72,16 @@
   .login-content {
     z-index: 1;
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: #6D5600;
     margin-top: 180px;
   }
   
   .login-form {
     max-width: 1200px;
     margin: -2 0px auto;
-    border: 2px solid #6d5600;
+    border: 3px solid #6d5600; /* Dark brown */
     padding: 120px 180px;
+    background-color: #F5EEDA; /* Old paper background color */
   }
   
   .form-group {
@@ -93,13 +94,14 @@
   .form-group label {
     display: block;
     margin-bottom: 8px;
-    font-family: Poppins;
+    font-family: 'Garamond', serif; /* Classic font */
+    color: #6D5600; /* Dark brown */
   }
   
   .form-group input {
     width: 180%;
     padding: 15px;
-    border: 1px solid #848383;
+    border: 1px solid #6D5600; /* Dark brown */
     border-radius: 3px;
     font-size: 16px;
   }
@@ -108,16 +110,16 @@
     width: 50%;
     margin-top: 50px;
     padding: 10px;
-    background-color: #B88E2F;
+    background-color: #B88E2F; /* Gold */
     border: none;
     border-radius: 5px;
-    color: rgb(252, 252, 252);
+    color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   .login-form button:hover {
-    background-color: #e6b33d;
+    background-color: #E6B33D
   }
   
   .login-section .login-text,
@@ -134,23 +136,26 @@
   
   .login-section .login-text {
     top: 40%;
-    font-family: Poppins;
+    color: black; /* Dark brown */
+    font-family: 'Garamond', serif;
     font-size: 28px;
     font-weight: bold;
     line-height: 24px;
   }
   
-  .welcome {
+  .welcome-container .welcome {
     top: 43%;
     font-size: 28px;
     font-weight: 600;
     line-height: 54px;
+    color: #433500; /* Dark brown */
+    font-family: 'Garamond', serif; /* Classic font */
   }
   
   .logo1 {
     position: relative;
     top: -27%;
-    left: 15px;
+    left: 1px;
     width: 30px;
     height: 20px;
     object-fit: cover;
@@ -160,14 +165,14 @@
   .Home,
   .login2 {
     top: 68%;
-    font-family: Poppins;
+    font-family: 'Garamond', serif;
     font-size: 16px;
     font-weight: bold;
     line-height: 24px;
   }
   
   .login2 {
-    left: 52.5%;
+    left: 52%;
     font-size: 16px;
     font-weight: 500;
   }
@@ -193,7 +198,7 @@
   }
   
   .signup-link .signup {
-    color: #007bff; 
+    color: brown;
     cursor: pointer;
   }
   

@@ -1,5 +1,3 @@
-// LoginPage.js
-
 import React, { useState } from 'react';
 import '../styles/login.css';
 import logo from '../public/Home_MeubelHouse_Logos05.png';
@@ -10,18 +8,32 @@ import { useNavigate } from 'react-router-dom';
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
+    if (!email || !password) {
+      setError('Email and password are required');
+      return;
+    }
+  
+    const lowerCaseEmail = email.toLowerCase();
+  
     try {
-      const response = await axios.post('http://localhost:3001/login', { email, password });
+      const response = await axios.post('http://localhost:3001/login', { email: lowerCaseEmail, password });
       console.log(response.data);
       if (response.data === "Success") {
         navigate('/shop');
+      } else if (response.data === "No User Found") {
+        setError('Email not registered');
+      } else if (response.data === "Password is Incorrect") {
+        setError('Incorrect password');
       }
     } catch (error) {
       console.error('Error logging in:', error);
+      setError('An error occurred while logging in');
     }
   };
 
@@ -37,6 +49,7 @@ const LoginPage = () => {
         setPassword={setPassword}
         handleSubmit={handleSubmit}
       />
+      {error && <ErrorDisplay message={error} />} {/* Display error message if error state is set */}
       <SignupLink />
     </div>
   );
@@ -81,6 +94,9 @@ const Welcome = () => {
 const LoginForm = ({ email, setEmail, password, setPassword, handleSubmit }) => {
   return (
     <div className="login-content">
+      <div className='welcome-container'>
+        <span className='welcome'>Welcome</span>
+      </div>
       <form className="login-form" onSubmit={handleSubmit}>
         <FormGroup label="Email">
           <input type="email" id="email" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
@@ -99,6 +115,14 @@ const FormGroup = ({ label, children }) => {
     <div className="form-group">
       <label htmlFor={label.toLowerCase()}>{label}</label>
       {children}
+    </div>
+  );
+};
+
+const ErrorDisplay = ({ message }) => {
+  return (
+    <div className="error-message">
+      {message}
     </div>
   );
 };

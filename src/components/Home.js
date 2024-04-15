@@ -10,23 +10,18 @@ import login from '../public/Home_Vector.png'
 export default function Home() {
   return (
     <div>
-      <div className="navbar">
-        <div className="navbar-left">
+      <div className="navbar12">
+        <div className="navbar12-left">
           <a href="/home">
             <img src={logo} alt="Logo" className="logo" />
           </a>
-          <span className="navbar-title">
+          <span className="navbar12-title">
             <a href="/home">Essentia</a>
           </span>
         </div>
-        <div className="navbar-center">
-          <span className="navbar-link">
-            <a href="/shop">Shop</a>
-          </span>
-        </div>
-        <div className="navbar-right">
+        <div className="navbar12-right">
           <a href="/login">
-            <img src={login} alt="Login" className="navbar-icon1" />
+            <img src={login} alt="Login" className="navbar12-icon1" />
           </a>
         </div>
       </div>

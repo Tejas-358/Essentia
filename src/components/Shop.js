@@ -1,29 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/shop.css';
+import { Link } from 'react-router-dom';
 import logo from '../public/Home_MeubelHouse_Logos05.png';
 import cart from '../public/grocery-store.png';
 import arrow from '../public/SignUp_Vector.png';
-import wj1 from '../public/j1.jpeg'
-import wj2 from '../public/j2.jpeg'
-import ws1 from '../public/s1.jpeg'
-import ws2 from '../public/s2.jpeg'
-import wh1 from '../public/w1.jpeg'
-import wh2 from '../public/w2.jpeg'
-import mj1 from '../public/mj1.jpeg'
-import mj2 from '../public/mj2.jpeg'
-import ms1 from '../public/ms1.jpeg'
-import ms2 from '../public/ms2.jpeg'
-import mh1 from '../public/mw1.jpeg'
-import mh2 from '../public/mw2.jpeg'
-
-
+import data from './data';
+import ItemCard from './ItemCard';
 
 export default function Shop() {
+
     return (
         <div>
             <Navbar />
             <ShopSection />
-            <CardFlip/>
+            <CardFlip />
+            <CheckoutButton />
         </div>
     );
 }
@@ -60,162 +51,31 @@ const ShopSection = () => {
 };
 
 const CardFlip = () => {
+    console.warn(data.productData)
     return (
-        <div>
-            <FirstDiv />
-            <SecondDiv />
-            <ThirdDiv />
-        </div>
         
-    )
-}
+        <div className='card-container'>
+            {data.productData.map((item, index)=>{
+                return(
+                    <ItemCard 
+                    img={item.img}
+                    title={item.title}  
+                    price= {item.price} 
+                    item = {item} 
+                    key = {index}/>
+                )
+            })}
+        </div>
+    );
+};
 
-const FirstDiv = () => {
+
+const CheckoutButton = () => {
     return (
-      <div>
-        <div class="container1">
-              <div className='card'>
-                  <div className='front'>
-                      <img src={wj1} className='image1'></img>
-                  </div>
-                  <div className='back'>
-                      <h1 className='back-text-1'>High-Waisted Cargo Wide Fit</h1>
-                      <p className='back-text-2'>Price: $33.90</p>
-                      <button className="add-to-cart-button">Add to Cart</button>
-                  </div>
-              </div>
-              <div className='card'>
-                  <div className='front'>
-                      <img src={wj2} className='image2'></img>
-                  </div>
-                  <div className='back'>
-                      <h1 className='back-text-1'>High-Waisted Cargo Wide Fit</h1>
-                      <p className='back-text-2'>Price: $33.90</p>
-                      <button className="add-to-cart-button">Add to Cart</button>
-                  </div>
-              </div>
-              <div className='card'>
-                  <div className='front'>
-                      <img src={ws1} className='image3'></img>
-                  </div>
-                  <div className='back'>
-                      <h1 className='back-text-1'>High-Waisted Cargo Wide Fit</h1>
-                      <p className='back-text-2'>Price: $33.90</p>
-                      <button className="add-to-cart-button">Add to Cart</button>
-                  </div>
-              </div>
-              <div className='card'>
-                  <div className='front'>
-                      <img src={ws2} className='image4'></img>
-                  </div>
-                  <div className='back'>
-                      <h1 className='back-text-1'>High-Waisted Cargo Wide Fit</h1>
-                      <p className='back-text-2'>Price: $33.90</p>
-                      <button className="add-to-cart-button">Add to Cart</button>
-                  </div>
-              </div>
-          </div>
-      </div>
-    )
-  }
-  
-
-  const SecondDiv = () => {
-    return (
-      <div>
-        <div class="container2">
-              <div className='card'>
-                  <div className='front'>
-                      <img src={wh1} className='image5'></img>
-                  </div>
-                  <div className='back'>
-                      <h1 className='back-text-1'>High-Waisted Cargo Wide Fit</h1>
-                      <p className='back-text-2'>Price: $33.90</p>
-                      <button className="add-to-cart-button">Add to Cart</button>
-                  </div>
-              </div>
-              <div className='card'>
-                  <div className='front'>
-                      <img src={wh2} className='image6'></img>
-                  </div>
-                  <div className='back'>
-                      <h1 className='back-text-1'>High-Waisted Cargo Wide Fit</h1>
-                      <p className='back-text-2'>Price: $33.90</p>
-                      <button className="add-to-cart-button">Add to Cart</button>
-                  </div>
-              </div>
-              <div className='card'>
-                  <div className='front'>
-                      <img src={mj1} className='image7'></img>
-                  </div>
-                  <div className='back'>
-                      <h1 className='back-text-1'>High-Waisted Cargo Wide Fit</h1>
-                      <p className='back-text-2'>Price: $33.90</p>
-                      <button className="add-to-cart-button">Add to Cart</button>
-                  </div>
-              </div>
-              <div className='card'>
-                  <div className='front'>
-                      <img src={mj2} className='image8'></img>
-                  </div>
-                  <div className='back'>
-                      <h1 className='back-text-1'>High-Waisted Cargo Wide Fit</h1>
-                      <p className='back-text-2'>Price: $33.90</p>
-                      <button className="add-to-cart-button">Add to Cart</button>
-                  </div>
-              </div>
-          </div>
-      </div>
-    )
-  }
-
-
-  const ThirdDiv = () => {
-    return (
-      <div>
-        <div class="container3">
-              <div className='card'>
-                  <div className='front'>
-                      <img src={ms1} className='image9'></img>
-                  </div>
-                  <div className='back'>
-                      <h1 className='back-text-1'>High-Waisted Cargo Wide Fit</h1>
-                      <p className='back-text-2'>Price: $33.90</p>
-                      <button className="add-to-cart-button">Add to Cart</button>
-                  </div>
-              </div>
-              <div className='card'>
-                  <div className='front'>
-                      <img src={ms2} className='image10'></img>
-                  </div>
-                  <div className='back'>
-                      <h1 className='back-text-1'>High-Waisted Cargo Wide Fit</h1>
-                      <p className='back-text-2'>Price: $33.90</p>
-                      <button className="add-to-cart-button">Add to Cart</button>
-                  </div>
-              </div>
-              <div className='card'>
-                  <div className='front'>
-                      <img src={mh1} className='image11'></img>
-                  </div>
-                  <div className='back'>
-                      <h1 className='back-text-1'>High-Waisted Cargo Wide Fit</h1>
-                      <p className='back-text-2'>Price: $33.90</p>
-                      <button className="add-to-cart-button">Add to Cart</button>
-                  </div>
-              </div>
-              <div className='card'>
-                  <div className='front'>
-                      <img src={mh2} className='image12'></img>
-                  </div>
-                  <div className='back'>
-                      <h1 className='back-text-1'>High-Waisted Cargo Wide Fit</h1>
-                      <p className='back-text-2'>Price: $33.90</p>
-                      <button className="add-to-cart-button">Add to Cart</button>
-                  </div>
-              </div>
-          </div>
-      </div>
-    )
-  }
-
+        <div className="checkout-button-container">
+            <Link to="/cart">
+                <button className="checkout-button">View Cart</button>
+            </Link>
+        </div>
+    );
+};
