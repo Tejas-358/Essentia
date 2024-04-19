@@ -1,6 +1,9 @@
-import React from 'react'
-import { useCart } from 'react-use-cart'
-import '../styles/cart.css'
+import React from 'react';
+import { useCart } from 'react-use-cart';
+import '../styles/cart.css';
+import logo from '../public/Home_MeubelHouse_Logos05.png';
+import arrow from '../public/SignUp_Vector.png';
+import Navbar from './Navbar';
 
 export default function Cart() {
 
@@ -14,44 +17,90 @@ export default function Cart() {
     removeItem,
     emptyCart
   } = useCart();
-  if (isEmpty) return <h1>Your Cart is Empty</h1>
+
+  if (isEmpty) 
+  {
+    return (
+      <section>
+        <Navbar />
+        <CartSection />
+        <h1>You Cart is Empty!</h1>
+      </section>
+  )
+  }
 
   return (
     <section>
-      <div>
-        <div>
-          {console.warn(items)}
-          <h5>Cart ({totalUniqueItems}) Total Items: ({totalItems})</h5>
-          <table className='table'>
-            <tbody>
-              {items.map((item, index) => {
-                return (
-                  <tr key={index}>
-                    <td>
-                      <img src={item.img} style={{ height: '6rem' }} />
-                    </td>
-                    <td>{item.title}</td>
-                    <td>{item.price}</td>
-                    <td>Quantity({item.quantity})</td>
-                    <td>
-                      <button onClick={() => updateItemQuantity(item.id, item.quantity - 1)}>-</button>
-                      <button onClick={() => updateItemQuantity(item.id, item.quantity - 1)}>+</button>
-                      <button onClick={() => removeItem(item.id)}>Remove Item</button>
-                    </td>
-                  </tr>
-                )
-              })}
-            </tbody>
-          </table>
+      <Navbar />
+      <CartSection />
+      {/* <h5>Cart ({totalUniqueItems}) Total Items: ({totalItems})</h5> */}
+      <div className="cart-container">
+        <div className="left-container">
+          <div className="left-top">
+            <table className='table1'>
+              <thead>
+                <tr className='left-top-row'>
+                  <th>Product</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Subtotal</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div className="left-bottom">
+            <table className='table2'> 
+              <tbody>
+                {items.map((item, index) => (
+                  <CartItem key={index} item={item} updateItemQuantity={updateItemQuantity} removeItem={removeItem} />
+                ))}
+              </tbody>
+            </table>
+          </div>
+
         </div>
-        <div>
-          <h2>Total Price: {cartTotal}</h2>
-        </div>
-        <div>
-          <button onClick={emptyCart}>Clear Cart</button>
-          <button>Buy Now</button>
+        <div className="right-container">
+          <h2>Total Price: {Math.round(cartTotal)}</h2>
+          <div>
+            <button onClick={emptyCart}>Clear Cart</button>
+            <button className='CheckOut'>Check Out</button>
+          </div>
         </div>
       </div>
-    </section >
+    </section>
   )
 }
+
+const CartSection = () => {
+  return (
+    <div className="cart-section">
+      <div className="cart-overlay"></div>
+      <img src={logo} alt="Logo" className="logo1_3" />
+      <span className='cart-text'>Cart</span>
+      <span className='Home'>Home</span>
+      <span className='cart2'>Cart</span>
+      <img className='Vector' src={arrow} alt="Arrow" />
+    </div>
+  );
+};
+
+const CartItem = ({ item, updateItemQuantity, removeItem }) => {
+  return (
+    <tr className="cart-item">
+      <td className="product-image">
+        <img src={item.img} alt="Product" />
+      </td>
+      <td className="product-title">{item.title}</td>
+      <td className="product-price">{item.price}</td>
+      <td className="product-quantity">{item.quantity}</td>
+      <td className="product-subtotal">${+Math.floor(item.quantity * item.price)}</td>
+      <td className="product-actions">
+        <button onClick={() => updateItemQuantity(item.id, item.quantity - 1)} className='minus'>-</button>
+        <button onClick={() => updateItemQuantity(item.id, item.quantity + 1)} className='plus'>+</button>
+        <button onClick={() => removeItem(item.id)} className='remove'>Remove Item</button>
+      </td>
+    </tr>
+  );
+};
+

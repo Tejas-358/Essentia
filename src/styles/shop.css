@@ -30,7 +30,9 @@ body {
 }
 
 .shop-navbar-left .shop-navbar-title {
+  position: relative;
   flex: none;
+  top: -5px;
   margin-right: 5px;
   width: 145px;
   height: 41px;

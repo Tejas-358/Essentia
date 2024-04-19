@@ -6,44 +6,6 @@
   align-items: center;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 20px;
-  background-color: transparent;
-  position: fixed;
-  width: 100%;
-  z-index: 999;
-  top: 10px; 
-}
-
-.navbar-left {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-left .logo {
-  margin-right: 15px;
-  width: 55px;
-  height: 35px;
-  object-fit: cover;
-}
-
-.navbar-left .title {
-  position: relative;
-	flex: none;
-	top: -5px;
-	margin-right: 5px;
-	width: 145px;
-	height: 41px;
-	color: rgb(0, 0, 0);
-	font-family: Prociono;
-	font-size: 40px;
-	font-weight: 400;
-	line-height: 48.80000305175781px;
-}
-
 .signup-section {
   position: relative;
   top: 100px;
@@ -72,17 +34,19 @@
 .signup-content {
   z-index: 1;
   text-align: center;
-  color: rgb(0, 0, 0);
-  margin-top: 250px;
+  color: #6D5600;
+  margin-top: 180px;
 }
 
 .signup-form {
-  max-width: 1200px; 
-  margin: -2  0px auto;
-  margin-bottom: 200px;
-  border: 2px solid #6d5600; 
-  padding: 80px 150px; 
+    max-width: 1200px;
+    margin: -2 0px auto;
+    border: 3px solid #6d5600; /* Dark brown */
+    padding: 120px 180px;
+    background-color: #F5EEDA; /* Old paper background color */
+
 }
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -93,13 +57,14 @@
 .form-group label {
   display: block;
   margin-bottom: 8px;
-  font-family: Poppins ;
+  font-family: 'Garamond', serif; /* Classic font */
+  color: #6D5600; /* Dark brown */
 }
 
 .form-group input {
-  width: 180%; 
+  width: 180%;
   padding: 15px;
-  border: 1px solid #848383;
+  border: 1px solid #6D5600; /* Dark brown */
   border-radius: 3px;
   font-size: 16px;
 }
@@ -125,7 +90,7 @@
 .Home,
 .signup2,
 .Vector,
-.logo1 {
+.logo1_1 {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -134,20 +99,23 @@
 
 .signup-section .signup-text {
   top: 40%;
-  font-family: Poppins;
-  font-size: 28px;
-  font-weight: bold;
-  line-height: 24px;
+    color: black; /* Dark brown */
+    font-family: 'Garamond', serif;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 24px;
 }
 
-.welcome {
-  top: 35%;
+.welcome-container .welcome {
+  top: 43%;
   font-size: 28px;
   font-weight: 600;
   line-height: 54px;
+  color: #433500; /* Dark brown */
+  font-family: 'Garamond', serif; /* Classic font */
 }
 
-.logo1 {
+.signup-section .logo1_1 {
   position: relative; 
   top: -27%;
   left: 15px;
@@ -160,15 +128,13 @@
 .Home,
 .signup2 {
   top: 68%;
-  font-family: Poppins;
-  font-size: 16px;
-  font-weight: bold;
+  font-family: 'Garamond', serif;
   line-height: 24px;
 }
 
 .signup2 {
   left: 52.5%;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -183,4 +149,3 @@
   width: 8px;
   height: 8px;
 }
-

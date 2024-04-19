@@ -4,6 +4,7 @@ import logo from '../public/Home_MeubelHouse_Logos05.png';
 import arrow from '../public/SignUp_Vector.png';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -41,7 +42,6 @@ const LoginPage = () => {
     <div className="login-page">
       <Navbar />
       <LoginSection />
-      <Welcome />
       <LoginForm
         email={email}
         setEmail={setEmail}
@@ -55,26 +55,12 @@ const LoginPage = () => {
   );
 };
 
-const Navbar = () => {
-  return (
-    <div className="navbar">
-      <div className="navbar-left">
-        <a href="/home">
-          <img src={logo} alt="Logo" className="logo" />
-        </a>
-        <span className="title">
-          <a href="/shop">Essentia</a>
-        </span>
-      </div>
-    </div>
-  );
-};
 
 const LoginSection = () => {
   return (
     <div className="login-section">
       <div className="login-overlay"></div>
-      <img src={logo} alt="Logo" className="logo1" />
+      <img src={logo} alt="Logo" className="logo1_2" />
       <span className='login-text'>Login</span>
       <span className='Home'>Home</span>
       <span className='login2'>Login</span>
@@ -83,13 +69,6 @@ const LoginSection = () => {
   );
 };
 
-const Welcome = () => {
-  return (
-    <div className='welcome-container'>
-      <span className='welcome'>Welcome</span>
-    </div>
-  );
-};
 
 const LoginForm = ({ email, setEmail, password, setPassword, handleSubmit }) => {
   return (

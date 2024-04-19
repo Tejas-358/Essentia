@@ -4,6 +4,7 @@ import logo from '../public/Home_MeubelHouse_Logos05.png';
 import arrow from '../public/SignUp_Vector.png';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
+import Navbar from './Navbar';
 
 const SignUpPage = () => {
   return (
@@ -16,26 +17,13 @@ const SignUpPage = () => {
   );
 };
 
-const Navbar = () => {
-  return (
-    <div className="navbar">
-      <div className="navbar-left">
-        <a href="/home">
-          <img src={logo} alt="Logo" className="logo" />
-        </a>
-        <span className="title">
-          <a href="/home">Essentia</a>
-        </span>
-      </div>
-    </div>
-  );
-};
+
 
 const SignupSection = () => {
   return (
     <div className="signup-section">
       <div className="signup-overlay"></div>
-      <img src={logo} alt="Logo" className="logo1"/>
+      <img src={logo} alt="Logo" className="logo1_1"/>
       <span className='signup-text'>Sign Up</span>
       <span className='Home'>Home</span>
       <span className='signup2'>SignUp</span>
@@ -103,6 +91,9 @@ const SignupForm = () => {
 
   return (
     <div className="signup-content">
+      <div className='welcome-container'>
+        <span className='welcome'>Welcome</span>
+      </div>
       <form className="signup-form" onSubmit={handleSubmit}>
         <FormGroup label="Username">
           <input type="text" id="username" name="username" placeholder="Username" value={username} onChange={(e)=>setUsername(e.target.value)} required />
