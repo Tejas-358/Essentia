@@ -14,22 +14,24 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!email || !password) {
       setError('Email and password are required');
       return;
     }
-  
+
     const lowerCaseEmail = email.toLowerCase();
-  
+
     try {
       const response = await axios.post('http://localhost:3001/login', { email: lowerCaseEmail, password });
       console.log(response.data);
-      if (response.data === "Success") {
-        navigate('/shop');
-      } else if (response.data === "No User Found") {
+      if (response.data.message === "Success") {
+        const { username } = response.data; 
+        navigate('/shop', { state: { username: username } }); 
+        
+      } else if (response.data.message === "No User Found") { 
         setError('Email not registered');
-      } else if (response.data === "Password is Incorrect") {
+      } else if (response.data.message === "Password is Incorrect") { 
         setError('Incorrect password');
       }
     } catch (error) {
@@ -49,12 +51,11 @@ const LoginPage = () => {
         setPassword={setPassword}
         handleSubmit={handleSubmit}
       />
-      {error && <ErrorDisplay message={error} />} {/* Display error message if error state is set */}
+      {error && <ErrorDisplay message={error} />} 
       <SignupLink />
     </div>
   );
 };
-
 
 const LoginSection = () => {
   return (
@@ -68,7 +69,6 @@ const LoginSection = () => {
     </div>
   );
 };
-
 
 const LoginForm = ({ email, setEmail, password, setPassword, handleSubmit }) => {
   return (

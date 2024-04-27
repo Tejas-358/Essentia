@@ -41,49 +41,49 @@ const data = {
             id: 5,
             img: wh1,
             title: "Argyle Knitted Sweater Cardigans",
-            price: 45
+            price: 45.00
         },
         {
             id: 6,
             img: wh2,
             title: "Knitted Sweater Vest Autumn Loose V-Neck Sleeveless",
-            price: 33.90
+            price: 41.60
         },
         {
             id: 7,
             img: mj1,
             title: "Panjue Men's Baggy Cargo Pants",
-            price: 33.90
+            price: 46.30
         },
         {
             id: 8,
             img: mj2,
             title: "Straight Fit Trousers with Insert Pockets",
-            price: 33.90
+            price: 42.00
         },
         {
             id: 9,
             img: ms1,
             title: "Slim Fit Solid Cut Away Collar Casual Shirt",
-            price: 33.90
+            price: 35.60
         },
         {
             id: 10,
             img: ms2,
             title: "White Relaxed Fit Short-Sleeved Shirt",
-            price: 33.90
+            price: 38.50
         },
         {
             id: 11,
             img: mh1,
             title: "Spring And Autumn Brand Windproof Zipper Jacket",
-            price: 33.90
+            price: 36.50
         },
         {
             id: 12,
             img: mh2,
             title: "Cotton Satin Overshirt",
-            price: 33.90
+            price: 39.90
         }
     ]
 };

@@ -78,7 +78,7 @@ const SignupForm = () => {
     try {
       const response = await axios.post('http://localhost:3001/signup', { username, email, password });
       console.log(response.data);
-      if (response.data === 'User already exists') {
+      if (response.data.email === email) {
         window.alert('User with this email already exists. Please login.');
       } else {
         navigate('/login');

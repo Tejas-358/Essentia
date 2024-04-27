@@ -89,27 +89,63 @@
 }
 
 .right-container {
-  margin-right: 130px;
-  left: 10px;
-  background-color: #F9F1E7;
-  padding: 50px;
+  margin-right: 50px;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  padding: 30px;
   border-radius: 8px;
+  background-color: #f7f3e8;
+  border: 2px solid #d9c89f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Garamond', serif;
 }
 
 .right-container h2 {
   margin-bottom: 20px;
 }
 
-.right-container button {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
+.right-container .heading{
+  margin-left: 10px;
+  color: black; 
+  font-family: 'Garamond', serif;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 24px;
 }
 
-.right-container button:last-child {
-  margin-bottom: 0;
+.right-container .cart-total{
+  margin-top: 10px;
+  top:20px;
+  margin-left: 10px;
+  color: black; 
+  font-family: 'Garamond', serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 24px;
+  align-self: center;
 }
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-wrapper button {
+  background-color: #c0ab8e;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buttons-wrapper button:hover {
+  background-color: #d3baa2;
+}
+
+
 
 .cart-item {
   display: flex;
@@ -123,7 +159,7 @@
   margin-left: 30px; 
 }
 
-.table1 {
+.left-top {
   background-color: #ffe5c6;
   padding: 20px;
   position: absolute;
@@ -131,6 +167,47 @@
   width: 950px;
   left: 80px;
 }
+
+.left-top .product{
+  margin-left: 35px;
+  font-family: 'Garamond', serif;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+.left-top .name{
+  margin-left: 155px;
+  font-family: 'Garamond', serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+.left-top .price{
+  margin-left: 120px;
+  font-family: 'Garamond', serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+.left-top .quantity{
+  margin-left: 90px;
+  font-family: 'Garamond', serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+.left-top .subtotal{
+  margin-left: 90px;
+  font-family: 'Garamond', serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 24px;
+}
+
 
 .table2 {
   position: absolute;
@@ -160,7 +237,7 @@
 
 .cart-item .product-price{
   position: absolute;
-  left: 450px;
+  left: 460px;
   font-size: 18px;
   font-weight: bold;
   line-height: 24px;
@@ -169,7 +246,7 @@
 
 .cart-item .product-quantity{
   position: absolute;
-  left: 580px;
+  left: 620px;
   font-size: 18px;
   font-weight: bold;
   line-height: 24px;
@@ -178,7 +255,7 @@
 
 .cart-item .product-subtotal{
   position: absolute;
-  left: 680px;
+  left: 770px;
   font-size: 18px;
   font-weight: bold;
   line-height: 24px;
@@ -186,64 +263,48 @@
 }
 
 .cart-item .product-actions{
+  left: 790px;
   font-size: 18px;
   top: -10px;
   font-weight: bold;
   line-height: 24px;
   color: rgb(57, 0, 0);
+  justify-content: center;
+  align-items: center;
+}
+
+.minus, .plus, .remove{
+  position: absolute;
+  margin-left: 100px;
+  font-size: 14px;
+  background-color: rgb(127, 61, 23);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .minus {
-  position: absolute;
   left: 750px;
   padding: 5px 15px;
-  margin-right: 5px;
-  font-size: 18px;
-  background-color: rgb(127, 61, 23);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.minus:hover {
-  background-color: #955327;
-}
 
 .plus {
-  position: absolute;
   left: 790px;
   padding: 5px 13px;
-  margin-right: 5px;
-  font-size: 18px;
-  background-color: rgb(127, 61, 23);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.plus:hover {
-  background-color: #955327;
 }
 
 .remove {
-  position: absolute;
   left: 840px;
   padding: 5px 10px;
-  background-color: rgb(127, 61, 23);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
 }
 
+.minus:hover,
+.plus:hover,
 .remove:hover {
   background-color: #955327;
 }
-
 
 

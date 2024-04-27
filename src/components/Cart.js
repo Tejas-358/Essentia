@@ -37,17 +37,11 @@ export default function Cart() {
       <div className="cart-container">
         <div className="left-container">
           <div className="left-top">
-            <table className='table1'>
-              <thead>
-                <tr className='left-top-row'>
-                  <th>Product</th>
-                  <th>Name</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Subtotal</th>
-                </tr>
-              </thead>
-            </table>
+            <span className='product'>Product</span>
+            <span className='name'>Name</span>
+            <span className='price'>Price</span>
+            <span className='quantity'>Quantity</span>
+            <span className='subtotal'>Subtotal</span>
           </div>
           <div className="left-bottom">
             <table className='table2'> 
@@ -61,8 +55,10 @@ export default function Cart() {
 
         </div>
         <div className="right-container">
-          <h2>Total Price: {Math.round(cartTotal)}</h2>
-          <div>
+          <span className='heading'>Cart Total</span>
+          <br/>
+          <span className='cart-total'>Total Price: {cartTotal}</span>
+          <div className="buttons-wrapper">
             <button onClick={emptyCart}>Clear Cart</button>
             <button className='CheckOut'>Check Out</button>
           </div>
@@ -92,9 +88,9 @@ const CartItem = ({ item, updateItemQuantity, removeItem }) => {
         <img src={item.img} alt="Product" />
       </td>
       <td className="product-title">{item.title}</td>
-      <td className="product-price">{item.price}</td>
+      <td className="product-price">${item.price}</td>
       <td className="product-quantity">{item.quantity}</td>
-      <td className="product-subtotal">${+Math.floor(item.quantity * item.price)}</td>
+      <td className="product-subtotal">${Math.round(item.quantity * item.price)}</td>
       <td className="product-actions">
         <button onClick={() => updateItemQuantity(item.id, item.quantity - 1)} className='minus'>-</button>
         <button onClick={() => updateItemQuantity(item.id, item.quantity + 1)} className='plus'>+</button>

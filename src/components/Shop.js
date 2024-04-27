@@ -6,13 +6,18 @@ import cart from '../public/grocery-store.png';
 import arrow from '../public/SignUp_Vector.png';
 import data from './data';
 import ItemCard from './ItemCard';
+import { useLocation } from 'react-router-dom';
 
 export default function Shop() {
+
+    const location = useLocation();
+    const { username } = location.state;
 
     return (
         <div>
             <Navbar />
             <ShopSection />
+            <WelcomeMessage username={username}/>
             <CardFlip />
             <CheckoutButton />
         </div>
@@ -20,6 +25,7 @@ export default function Shop() {
 }
 
 const Navbar = () => {
+
     return (
         <div className="shop-navbar">
             <div className="shop-navbar-left">
@@ -31,7 +37,9 @@ const Navbar = () => {
                 </span>
             </div>
             <div className="shop-navbar-right">
-                <img src={cart} alt="Cart" className="shop-navbar-icon1" />
+                <a href='/cart'>
+                    <img src={cart}  alt="Cart" className="shop-navbar-icon1" />
+                </a>
             </div>
         </div>
     );
@@ -79,3 +87,12 @@ const CheckoutButton = () => {
         </div>
     );
 };
+
+const WelcomeMessage = ({ username }) => {
+    return (
+        <div className="welcome-message">
+            <p>Welcome {username}!</p>
+        </div>
+    );
+};
+
