@@ -9,7 +9,6 @@ export default function Cart() {
 
   const {
     isEmpty,
-    totalUniqueItems,
     totalItems,
     items,
     cartTotal,
@@ -33,7 +32,6 @@ export default function Cart() {
     <section>
       <Navbar />
       <CartSection />
-      {/* <h5>Cart ({totalUniqueItems}) Total Items: ({totalItems})</h5> */}
       <div className="cart-container">
         <div className="left-container">
           <div className="left-top">
@@ -55,9 +53,11 @@ export default function Cart() {
 
         </div>
         <div className="right-container">
-          <span className='heading'>Cart Total</span>
+          <span className='heading'> Cart Total </span>
           <br/>
-          <span className='cart-total'>Total Price: {cartTotal}</span>
+          <p className='cart-total1'>Total Items: {totalItems}</p>
+          <br/>
+          <p className='cart-total2'>Total Price: ${cartTotal}</p>
           <div className="buttons-wrapper">
             <button onClick={emptyCart}>Clear Cart</button>
             <button className='CheckOut'>Check Out</button>

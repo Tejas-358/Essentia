@@ -3,7 +3,7 @@ import '../styles/signup.css';
 import logo from '../public/Home_MeubelHouse_Logos05.png';
 import arrow from '../public/SignUp_Vector.png';
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, Link } from 'react-router-dom'
 import Navbar from './Navbar';
 
 const SignUpPage = () => {
@@ -13,6 +13,7 @@ const SignUpPage = () => {
       <SignupSection />
       <Welcome />
       <SignupForm />
+      <LoginLink/>
     </div>
   );
 };
@@ -78,15 +79,15 @@ const SignupForm = () => {
     try {
       const response = await axios.post('http://localhost:3001/signup', { username, email, password });
       console.log(response.data);
-      if (response.data.email === email) {
-        window.alert('User with this email already exists. Please login.');
-      } else {
-        navigate('/login');
-      }
+      navigate('/login');
     } catch (error) {
-      console.error('Error signing up:', error);
+      if (error.response && error.response.status === 400) {
+        window.alert('Email already exists! Please login.');
+      } else {
+        console.error('Error signing up:', error);
+      }
     }
-  };
+};
 
 
   return (
@@ -115,6 +116,15 @@ const FormGroup = ({ label, children }) => {
     <div className="form-group">
       <label htmlFor={label.toLowerCase()}>{label}</label>
       {children}
+    </div>
+  );
+};
+
+const LoginLink = () => {
+  return (
+    <div className="signup-link">
+      <span>Already have an account? </span>
+      <Link to='/login' className="signup">Login</Link>
     </div>
   );
 };

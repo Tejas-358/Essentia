@@ -1,4 +1,3 @@
-// Navbar.js
 
 import React from 'react';
 import logo from '../public/Home_MeubelHouse_Logos05.png';
@@ -12,7 +11,7 @@ const Navbar = () => {
           <img src={logo} alt="Logo" className="logo" />
         </a>
         <span className="title">
-          <a href="/shop">Essentia</a>
+          <a href="/home">Essentia</a>
         </span>
       </div>
     </div>

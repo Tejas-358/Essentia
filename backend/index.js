@@ -30,9 +30,31 @@ app.post('/login', (req, res) => {
 });
 
 app.post('/signup', (req, res) => {
-    UserModel.create(req.body)
-        .then(users => res.json(users))
-        .catch(err => res.json(err));
+    const { email } = req.body;
+    console.log('Email:', email); // Log the email
+    
+    UserModel.findOne({ email })
+        .then(user => {
+            console.log('User:', user); // Log the user found
+            if (user) {
+                console.log('User already exists');
+                res.status(400).json({ message: "Email already exists" });
+            } else {
+                UserModel.create(req.body)
+                    .then(newUser => {
+                        console.log('New user created:', newUser);
+                        res.json(newUser);
+                    })
+                    .catch(err => {
+                        console.error('Error creating user:', err);
+                        res.status(500).json(err);
+                    });
+            }
+        })
+        .catch(err => {
+            console.error('Error finding user:', err);
+            res.status(500).json(err);
+        });
 });
 
 app.listen(3001, () => {

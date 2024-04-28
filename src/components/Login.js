@@ -9,14 +9,13 @@ import Navbar from './Navbar';
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!email || !password) {
-      setError('Email and password are required');
+      alert('Email and password are required');
       return;
     }
 
@@ -30,13 +29,13 @@ const LoginPage = () => {
         navigate('/shop', { state: { username: username } }); 
         
       } else if (response.data.message === "No User Found") { 
-        setError('Email not registered');
+        alert('Email not registered. Please Register');
       } else if (response.data.message === "Password is Incorrect") { 
-        setError('Incorrect password');
+        alert('Incorrect password! Try Again');
       }
     } catch (error) {
       console.error('Error logging in:', error);
-      setError('An error occurred while logging in');
+      alert('An error occurred while logging in');
     }
   };
 
@@ -51,7 +50,6 @@ const LoginPage = () => {
         setPassword={setPassword}
         handleSubmit={handleSubmit}
       />
-      {error && <ErrorDisplay message={error} />} 
       <SignupLink />
     </div>
   );
@@ -94,14 +92,6 @@ const FormGroup = ({ label, children }) => {
     <div className="form-group">
       <label htmlFor={label.toLowerCase()}>{label}</label>
       {children}
-    </div>
-  );
-};
-
-const ErrorDisplay = ({ message }) => {
-  return (
-    <div className="error-message">
-      {message}
     </div>
   );
 };
