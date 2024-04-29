@@ -1,3 +1,10 @@
+/* itemcard.css */
+.back a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Your existing styles */
 .card {
     height: 446px;
     width: 285px;
@@ -5,31 +12,30 @@
     transition: transform 1500ms;
     transform-style: preserve-3d;
     margin: 20px;
-  }
-  
-  .front,
-  .back {
+}
+
+.front,
+.back {
     height: 100%;
     width: 100%;
     border-radius: 2rem;
     position: absolute;
     backface-visibility: hidden;
-  }
-  
-  .front .image1 {
+}
+
+.front .image1 {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 2rem;
-  }
-  
-  
-  .front {
+}
+
+.front {
     border: 4px solid rgb(127, 61, 23);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .back {
+}
+
+.back {
     background-color: blanchedalmond;
     transform: rotateY(180deg);
     font-size: 18px;
@@ -43,20 +49,20 @@
     border: 3px solid rgb(127, 61, 23);
     text-align: center;
     border-radius: 2rem;
-  }
-  
-  .back-text-1 {
+}
+
+.back-text-1 {
     font-size: 24px;
     margin-bottom: 50px;
-  }
-  
-  .back-text-2 {
+}
+
+.back-text-2 {
     font-size: 18px;
     margin-bottom: 10px;
     font-weight: 28px;
-  }
+}
 
-  .add-to-cart-button {
+.add-to-cart-button {
     padding: 10px 20px;
     font-size: 18px;
     background-color: rgb(127, 61, 23);
@@ -65,19 +71,19 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  
-  .add-to-cart-button:hover {
+}
+
+.add-to-cart-button:hover {
     background-color: #955327;
-  }
-  
-  .checkout-button-container {
+}
+
+.checkout-button-container {
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
-  }
-  
-  .checkout-button {
+}
+
+.checkout-button {
     padding: 10px 20px;
     font-size: 18px;
     background-color: rgb(127, 61, 23);
@@ -86,9 +92,8 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  
-  .checkout-button:hover {
+}
+
+.checkout-button:hover {
     background-color: #955327;
-  }
-  
+}

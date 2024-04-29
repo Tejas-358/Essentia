@@ -1,3 +1,4 @@
+// Importing images
 import wj1 from '../public/j1.jpeg';
 import wj2 from '../public/j2.jpeg';
 import ws1 from '../public/s1.jpeg';
@@ -11,13 +12,14 @@ import ms2 from '../public/ms2.jpeg';
 import mh1 from '../public/mw1.jpeg';
 import mh2 from '../public/mw2.jpeg';
 
+// Data object containing product information
 const data = {
     productData: [
         {
             id: 1,
             img: wj1,
-            title: "High-Waisted Cargo Wide Fit",
-            price: 33.90
+            title: "High-Waisted Cargo Wide Fit", // Product title
+            price: 33.90 // Product price
         },   
         {
             id: 2,

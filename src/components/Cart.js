@@ -1,12 +1,12 @@
 import React from 'react';
-import { useCart } from 'react-use-cart';
-import '../styles/cart.css';
-import logo from '../public/Home_MeubelHouse_Logos05.png';
-import arrow from '../public/SignUp_Vector.png';
-import Navbar from './Navbar';
+import { useCart } from 'react-use-cart'; // Importing useCart hook for managing cart state
+import '../styles/cart.css'; // Importing styles
+import logo from '../public/Home_MeubelHouse_Logos05.png'; // Importing logo
+import arrow from '../public/SignUp_Vector.png'; // Importing arrow icon
+import Navbar from './Navbar'; // Importing Navbar component
 
 export default function Cart() {
-
+  // Destructuring cart state and functions from useCart hook
   const {
     isEmpty,
     totalItems,
@@ -17,17 +17,18 @@ export default function Cart() {
     emptyCart
   } = useCart();
 
-  if (isEmpty) 
-  {
+  // If cart is empty, display a message
+  if (isEmpty) {
     return (
       <section>
         <Navbar />
         <CartSection />
-        <h1>You Cart is Empty!</h1>
+        <h1>Your Cart is Empty!</h1>
       </section>
-  )
+    );
   }
 
+  // If cart is not empty, display cart items and total
   return (
     <section>
       <Navbar />
@@ -35,6 +36,7 @@ export default function Cart() {
       <div className="cart-container">
         <div className="left-container">
           <div className="left-top">
+            {/* Table headers */}
             <span className='product'>Product</span>
             <span className='name'>Name</span>
             <span className='price'>Price</span>
@@ -44,20 +46,22 @@ export default function Cart() {
           <div className="left-bottom">
             <table className='table2'> 
               <tbody>
+                {/* Mapping over cart items and rendering each cart item */}
                 {items.map((item, index) => (
                   <CartItem key={index} item={item} updateItemQuantity={updateItemQuantity} removeItem={removeItem} />
                 ))}
               </tbody>
             </table>
           </div>
-
         </div>
         <div className="right-container">
+          {/* Cart total */}
           <span className='heading'> Cart Total </span>
           <br/>
           <p className='cart-total1'>Total Items: {totalItems}</p>
           <br/>
           <p className='cart-total2'>Total Price: ${cartTotal}</p>
+          {/* Buttons for clearing cart and checking out */}
           <div className="buttons-wrapper">
             <button onClick={emptyCart}>Clear Cart</button>
             <button className='CheckOut'>Check Out</button>
@@ -65,9 +69,10 @@ export default function Cart() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
+// CartSection component
 const CartSection = () => {
   return (
     <div className="cart-section">
@@ -81,9 +86,11 @@ const CartSection = () => {
   );
 };
 
+// CartItem component
 const CartItem = ({ item, updateItemQuantity, removeItem }) => {
   return (
     <tr className="cart-item">
+      {/* Displaying cart item details */}
       <td className="product-image">
         <img src={item.img} alt="Product" />
       </td>
@@ -91,6 +98,7 @@ const CartItem = ({ item, updateItemQuantity, removeItem }) => {
       <td className="product-price">${item.price}</td>
       <td className="product-quantity">{item.quantity}</td>
       <td className="product-subtotal">${Math.round(item.quantity * item.price)}</td>
+      {/* Buttons to update quantity and remove item */}
       <td className="product-actions">
         <button onClick={() => updateItemQuantity(item.id, item.quantity - 1)} className='minus'>-</button>
         <button onClick={() => updateItemQuantity(item.id, item.quantity + 1)} className='plus'>+</button>
@@ -99,4 +107,3 @@ const CartItem = ({ item, updateItemQuantity, removeItem }) => {
     </tr>
   );
 };
-

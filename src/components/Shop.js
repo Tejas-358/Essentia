@@ -32,9 +32,7 @@ const Navbar = () => {
                 <a href="/home">
                     <img src={logo} alt="Logo" className="shop-logo" />
                 </a>
-                <span className="shop-navbar-title">
-                    <a href="/home">Essentia</a>
-                </span>
+                <span className="shop-navbar-title">Essentia</span>
             </div>
             <div className="shop-navbar-right">
                 <a href='/cart'>

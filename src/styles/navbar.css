@@ -19,6 +19,7 @@
 
 .navbar-left .logo {
   margin-right: 15px;
+  margin-left: 15.5px;
   width: 55px;
   height: 35px;
   object-fit: cover;
@@ -26,8 +27,8 @@
 
 .navbar-left .title {
   position: relative;
-  flex: none;
-  top: -5px;
+  flex: auto;
+  top: -6px;
   margin-right: 5px;
   width: 145px;
   height: 41px;
