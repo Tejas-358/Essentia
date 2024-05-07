@@ -323,3 +323,116 @@
 }
 
 
+@media (max-width: 767px) {
+  .cart-section {
+    top: 70px;
+    height: 100px;
+  }
+
+  .cart-section .cart-text {
+    font-size: 24px;
+  }
+
+  .cart-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 120px;
+  }
+
+  .right-container {
+    margin-right: 0;
+    margin-top: 20px;
+    width: 80%;
+  }
+
+  .left-top {
+    width: 90%;
+    left: 5%;
+    padding: 10px;
+    height: auto;
+  }
+
+  .left-top .product,
+  .left-top .name,
+  .left-top .price,
+  .left-top .quantity,
+  .left-top .subtotal {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  .table2 {
+    left: 5%;
+    top: 120px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .cart-item img {
+    margin-right: 0;
+    margin-bottom: 10px;
+    margin-left: 0;
+  }
+
+  .cart-item .product-title,
+  .cart-item .product-price,
+  .cart-item .product-quantity,
+  .cart-item .product-subtotal {
+    position: static;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .cart-item .product-actions {
+    position: static;
+    margin-top: 10px;
+  }
+
+  .minus,
+  .plus,
+  .remove {
+    position: static;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+/* For screens between 768px and 1024px (e.g., tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .cart-section {
+    top: 90px;
+    height: 120px;
+  }
+
+  .cart-section .cart-text {
+    font-size: 26px;
+  }
+
+  .cart-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 80px;
+  }
+
+  .right-container {
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 40%;
+  }
+
+  .left-top {
+    width: 90%;
+    left: 5%;
+    padding: 15px;
+  }
+
+  .table2 {
+    left: 5%;
+    top: 120px;
+  }
+}

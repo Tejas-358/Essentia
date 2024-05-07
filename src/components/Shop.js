@@ -28,6 +28,7 @@ const Navbar = () => {
 
     return (
         <div className="shop-navbar">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
             <div className="shop-navbar-left">
                 <a href="/home">
                     <img src={logo} alt="Logo" className="shop-logo" />

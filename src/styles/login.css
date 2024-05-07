@@ -1,4 +1,7 @@
-/* login.css */
+::-webkit-scrollbar {
+  width: 8px; 
+  background-color: transparent; /* Set the background color to transparent */
+}
 
 .login-page {
   display: flex;
@@ -164,4 +167,56 @@
 
 .signup-link .signup:hover {
   text-decoration: underline; 
+}
+
+
+
+@media (max-width: 767px) {
+  .login-section {
+    top: 50px;
+    height: 100px;
+  }
+
+  .login-content {
+    margin-top: 120px;
+  }
+
+  .login-form {
+    padding: 60px 20px;
+  }
+
+  .form-group input {
+    width: 100%;
+  }
+
+  .login-form button {
+    width: 100%;
+  }
+
+  .login-section .login-text {
+    font-size: 24px;
+  }
+
+  .welcome-container .welcome {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .login2 {
+    left: 58%;
+  }
+
+  .Home {
+    left: 40%;
+  }
+
+  .signup-link {
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+
+  .welcome-container .welcome{
+    font-size: 20px;
+    top: 31%;
+  }
 }

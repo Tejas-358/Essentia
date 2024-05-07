@@ -149,3 +149,60 @@
   width: 8px;
   height: 8px;
 }
+
+@media (max-width: 767px) {
+  .signup-section {
+    top: 50px;
+    height: 100px;
+  }
+
+  .signup-content {
+    margin-top: 120px;
+  }
+
+  .signup-form {
+    padding: 60px 20px;
+  }
+
+  .form-group input {
+    width: 100%;
+  }
+
+  .signup-form button {
+    width: 100%;
+  }
+
+  .signup-section .signup-text {
+    font-size: 24px;
+  }
+
+  .welcome-container .welcome {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .signup2 {
+    left: 58%;
+    font-size: 15px;
+  }
+
+  .Home {
+    left: 30%;
+    font-size: 15px;
+  }
+
+  .Vector{
+    width: 3px;
+    height: 3px;
+  }
+
+  .signup-link {
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+
+  .welcome-container .welcome{
+    font-size: 20px;
+    top: 31%;
+  }
+}

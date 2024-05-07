@@ -366,6 +366,65 @@
 	color: inherit;
   }
 
-
-
+  @media (max-width: 767px) {
+	.container div {
+	  font-size: 3em; /* Reduce font size for better readability */
+	}
+  
+	.first .text1_1,
+	.second .text2_1,
+	.third .text3_1,
+	.fourth .text4_1 {
+	  left: 20px; /* Adjust the left position for smaller screens */
+	  top: 50%;
+	  width: 80%; /* Adjust the width for better wrapping */
+	}
+  
+	.first .text1_2,
+	.second .text2_2,
+	.third .text3_2,
+	.fourth .text4_2 {
+	  left: 20px; /* Adjust the left position for smaller screens */
+	  top: 60%;
+	  width: 80%; /* Adjust the width for better wrapping */
+	  max-width: none; /* Reset max-width for better wrapping */
+	}
+  
+	.first .text1_3,
+	.second .text2_3,
+	.third .text3_3,
+	.fourth .text4_3 {
+	  left: 20px; /* Adjust the left position for smaller screens */
+	  top: 75%;
+	  width: 80%; /* Adjust the width for better wrapping */
+	}
+  
+	.navbar12 {
+	  padding: 10px; /* Reduce padding for smaller screens */
+	  top: 0; /* Move the navbar to the top */
+	}
+  
+	.navbar12-left .logo {
+	  width: 40px; /* Reduce logo size for smaller screens */
+	  height: 25px;
+	}
+  
+	.navbar12-left .navbar12-title {
+	  font-size: 24px; /* Reduce title font size for smaller screens */
+	  top: 0;
+	}
+  
+	.navbar12-right .navbar12-icon1 {
+	  left: -50px; /* Adjust icon positions for smaller screens */
+	}
+  
+	.navbar12-right .navbar12-icon2 {
+	  left: -25px;
+	}
+  
+	.navbar12-center .navbar12-link {
+	  margin-right: 50px; /* Reduce margin for smaller screens */
+	  font-size: 18px; /* Reduce font size for smaller screens */
+	}
+  }
  
